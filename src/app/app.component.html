@@ -1,0 +1,51 @@
+<div class="w-100 d-flex">
+  <main class="w-80">
+    <h1>Postharen</h1>
+    <h2>Request</h2>
+    <select class="button mr-1" [(ngModel)]="method">
+      <option value="GET">GET</option>
+      <option value="POST">POST</option>
+      <option value="PUT">PUT</option>
+      <option value="PATCH">PATCH</option>
+      <option value="DELETE">DELETE</option>
+    </select>
+    <input class="w-80 mr-1" type="text" [(ngModel)]="url" />
+    <button (click)="sendRequest()" class="button" type="button">Send</button>
+    <table class="w-100">
+      <thead>
+        <tr>
+          <th>Header</th>
+          <th>Value</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let header of headers; let index = index">
+          <td>
+            <input class="w-100 mt-1" type="text" [(ngModel)]="header.key" />
+          </td>
+          <td>
+            <input class="w-100 mt-1" type="text" [(ngModel)]="header.value" />
+          </td>
+          <td>
+            <button class="button" type="button" (click)="removeHeader(index)">
+              X
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <button class="button" type="button" (click)="addHeader()">
+        Add Header
+      </button>
+    </table>
+    <div>
+      <textarea
+        *ngIf="method !== 'GET'"
+        class="w-100"
+        [(ngModel)]="body"
+      ></textarea>
+    </div>
+    <app-response *ngIf="response" [response]="response"></app-response>
+  </main>
+  <aside class="w-20"></aside>
+</div>

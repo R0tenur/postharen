@@ -1,0 +1,62 @@
+@import "node_modules/highlight.js/styles/default.css";
+@import "node_modules/highlight.js/styles/a11y-light.min.css";
+
+.d-flex {
+  display: flex !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+.w-70 {
+  width: 70% !important;
+}
+.w-20 {
+  width: 18% !important;
+}
+
+.mt-1 {
+  margin-top: 0.6rem !important;
+}
+.mr-1 {
+  margin-right: 0.3rem !important;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  // font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5%;
+  background-color: white;
+  color: black;
+  border: solid #60a100;
+  &:hover {
+    background-color: #60a100;
+    color: white;
+  }
+}
+
+input {
+  padding: 10px 12px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  padding: 10px 12px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 400px;
+}
